@@ -35,19 +35,23 @@ ui.addButton("HOME AXIS", 50, 150, 600,100).onClick(function(){
 });
 
 ui.addButton("X-", 240, 400, 100,100).onClick(function(){
-	serial.write("ledoff");
+	serial.write("G91\r\n");
+	serial.write("G1 X-5 F1000");
 });
 
 ui.addButton("X+", 380, 400, 100,100).onClick(function(){
-	serial.write("ledoff");
+	serial.write("G91\r\n");
+	serial.write("G1 X5 F1000");
 });
 
 ui.addButton("Y+", 310, 300, 100,100).onClick(function(){
-	serial.write("ledoff");
+	serial.write("G91\r\n");
+	serial.write("G1 Y5 F1000");
 });
 
 ui.addButton("Y-", 310, 500, 100,100).onClick(function(){
-	serial.write("ledoff");
+	serial.write("G91\r\n");
+	serial.write("G1 Y-5 F1000");
 });
 
 ui.addButton("STOP", 50, 600, 600,100).onClick(function(){
@@ -55,3 +59,5 @@ ui.addButton("STOP", 50, 600, 600,100).onClick(function(){
 });
 
 var camera = ui.addCameraView("back", 0, 700, 360, 480);
+
+
